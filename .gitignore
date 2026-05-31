@@ -1,0 +1,24 @@
+# Java
+target/
+*.class
+*.jar
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.idea/
+.vscode/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+application-local.yml
+
+# Upload files
+uploads/
