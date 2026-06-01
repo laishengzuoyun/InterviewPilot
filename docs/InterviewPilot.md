@@ -32,7 +32,7 @@ Build a complete full-stack web application that supports:
 ## Backend
 
 - Java 21
-- Spring Boot 3
+- Spring Boot 4.0.6
 - Spring Security
 - JWT
 - MyBatis Plus
