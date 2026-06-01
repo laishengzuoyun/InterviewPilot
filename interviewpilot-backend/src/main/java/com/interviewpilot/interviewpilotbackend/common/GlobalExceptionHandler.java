@@ -5,6 +5,8 @@ import jakarta.validation.ConstraintViolationException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -84,6 +86,16 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(NoResourceFoundException.class)
 	public ResponseEntity<Result<Void>> handleNoResourceFoundException(NoResourceFoundException exception) {
 		return buildResponse(ErrorCode.NOT_FOUND, ErrorCode.NOT_FOUND.getMessage());
+	}
+
+	@ExceptionHandler(AuthenticationException.class)
+	public ResponseEntity<Result<Void>> handleAuthenticationException(AuthenticationException exception) {
+		return buildResponse(ErrorCode.UNAUTHORIZED, ErrorCode.UNAUTHORIZED.getMessage());
+	}
+
+	@ExceptionHandler(AccessDeniedException.class)
+	public ResponseEntity<Result<Void>> handleAccessDeniedException(AccessDeniedException exception) {
+		return buildResponse(ErrorCode.FORBIDDEN, ErrorCode.FORBIDDEN.getMessage());
 	}
 
 	@ExceptionHandler(Exception.class)
