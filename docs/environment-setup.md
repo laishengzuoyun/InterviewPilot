@@ -32,7 +32,7 @@ Then fill in your own local database password and AI key. `application-local.yml
 | --- | --- | --- |
 | `SERVER_PORT` | `8080` | Backend HTTP port |
 | `SPRING_PROFILES_ACTIVE` | `local` | Active Spring profile |
-| `DB_URL` | `jdbc:mysql://localhost:3306/interviewpilot?...` | MySQL JDBC URL |
+| `DB_URL` | `jdbc:mysql://localhost:3306/interviewpilot?...&allowPublicKeyRetrieval=true` | MySQL JDBC URL |
 | `DB_USERNAME` | `root` | MySQL username |
 | `DB_PASSWORD` | empty | MySQL password |
 | `DB_DRIVER_CLASS_NAME` | `com.mysql.cj.jdbc.Driver` | JDBC driver class |
@@ -47,7 +47,7 @@ Then fill in your own local database password and AI key. `application-local.yml
 ## PowerShell Example
 
 ```powershell
-$env:DB_URL='jdbc:mysql://localhost:3306/interviewpilot?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false'
+$env:DB_URL='jdbc:mysql://localhost:3306/interviewpilot?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true'
 $env:DB_USERNAME='root'
 $env:DB_PASSWORD='your-local-db-password'
 $env:UPLOAD_BASE_DIR='uploads'
